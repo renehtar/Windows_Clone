@@ -1,0 +1,123 @@
+.windowsHomeContent {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  height: 0vh;
+  bottom: 100%;
+  left: 0;
+  padding: 0.2rem 0.6rem 0 0;
+  z-index: 1;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-out;
+  color: white;
+  background-color: #111;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    height: 70vh;
+
+    .column {
+      height: 100%;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    padding: 0.5rem;
+
+    &:nth-child(2) {
+      margin-left: 2rem;
+    }
+
+    &:nth-child(3) {
+      max-width: 17rem;
+
+      .categories {
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+      .programs {
+        display: flex;
+        gap: 0.2rem;
+        margin-bottom: 0.5rem;
+
+        .program {
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          width: 5rem;
+          height: 5rem;
+          border: 2px solid transparent;
+          transition: 0.1s ease;
+          background: rgba(255, 255, 255, 0.2);
+
+          &:hover {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+          }
+
+          .icon {
+            height: 40%;
+            width: fit-content;
+          }
+        }
+      }
+    }
+
+    .init {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem 0.6rem;
+    }
+
+    &.index {
+      width: 2rem;
+      padding: 0;
+      padding-top: 0.6rem;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 2;
+      overflow: hidden;
+      background-color: #111;
+
+      &:hover {
+        width: 10rem;
+      }
+
+      .optionsIndex {
+        bottom: 0;
+        left: 3rem;
+      }
+
+      .programs {
+        .program {
+          padding: 0.5rem 0.6rem;
+        }
+      }
+    }
+
+    .programs {
+      .program {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem;
+        cursor: default;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        .icon {
+          width: 1rem;
+        }
+      }
+    }
+  }
+}

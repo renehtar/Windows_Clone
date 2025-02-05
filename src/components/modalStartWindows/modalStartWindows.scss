@@ -1,0 +1,39 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  background-color: black;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+
+    .modal {
+      width: 20%;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+
+    img {
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  background-color: red;
+  z-index: 2;
+  transform-origin: left bottom;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}

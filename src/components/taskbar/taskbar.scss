@@ -1,0 +1,181 @@
+.taskbar {
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+  z-index: 1;
+  background: rgba(0 62 63 / 65%);
+
+  .left,
+  .right {
+    display: flex;
+    height: inherit;
+    width: fit-content;
+    gap: 0.1rem;
+  }
+
+  .right {
+    color: white;
+
+    .desktopShortcut {
+      width: 0.5rem;
+      height: 100%;
+      transition: 0.2s ease;
+      border-left: 1px solid #888;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .toColumn {
+      flex-direction: column;
+      font-size: 0.6rem;
+    }
+
+    .smallPadding {
+      padding: 0.2rem 0.1rem;
+    }
+
+    .soundIcon {
+      font-size: 0.8rem;
+      margin-bottom: -0.4rem;
+    }
+  }
+
+  .taskbarApp {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    transition: 0.2s ease;
+
+    .appIcon {
+      height: 80%;
+    }
+  }
+}
+
+.windowsStart,
+.app {
+  padding: 0.2rem 0.6rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.windowsStart {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.2s ease;
+  color: white;
+
+  &:hover {
+    .windowsStartIcon {
+      color: #31a7eb;
+    }
+  }
+
+  .windowsStartIcon {
+    cursor: default;
+  }
+}
+
+.app {
+  border-bottom: 2px solid transparent;
+  position: relative;
+
+  .suspendedWindowContainer {
+    display: flex;
+    gap: 0.1rem;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition-delay: 500ms;
+
+    .windowPreview {
+      width: 6rem;
+      height: 4.8rem;
+
+      .headerPreview {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -0.5rem;
+
+        & * {
+          font-size: 0.5rem;
+        }
+
+        .closeWindow {
+          width: 0.5rem;
+          text-align: center;
+          cursor: default;
+
+          &:hover {
+            background-color: red;
+          }
+        }
+      }
+
+      .container {
+        transform: scale(0.3);
+        transform-origin: center;
+        margin: -5.5rem -7rem;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.hasWindow {
+    border-bottom: 2px solid #006faf;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+
+      .suspendedWindowContainer {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+.windowsSearch {
+  position: relative;
+  height: inherit;
+
+  .search {
+    max-width: 100%;
+    height: inherit;
+    outline: none;
+    padding-left: 1.8rem;
+    border: 2px solid rgba(0, 0, 0, 0);
+
+    &:hover {
+      border: 2px solid #b6b6b6;
+    }
+
+    &:focus {
+      border: 2px solid #005e94;
+    }
+  }
+
+  .searchIcon {
+    top: 25%;
+    left: 0.5rem;
+    position: absolute;
+  }
+}

@@ -1,0 +1,140 @@
+.fileManager,
+.header {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.fileManager {
+  flex: 1;
+  user-select: none;
+  height: inherit;
+}
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  user-select: none;
+
+  * {
+    font-size: 0.8rem;
+  }
+
+  .arrows {
+    display: flex;
+    gap: 0.2rem;
+
+    .arrow {
+      cursor: default;
+      transition: 0.2s ease;
+      color: #888;
+
+      &.active {
+        color: black;
+
+        &:hover {
+          color: #1eb5db;
+        }
+      }
+    }
+  }
+
+  .foldersPath,
+  .searchBar {
+    border-radius: 0.2rem;
+    border: 1px solid #9cb2c5;
+  }
+
+  .foldersPath {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0.1rem 0.2rem;
+    white-space: nowrap;
+    text-transform: capitalize;
+  }
+
+  .pathDefault,
+  .search {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .iconPath {
+    width: 0.7rem;
+  }
+
+  .searchBar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 9rem;
+    position: relative;
+
+    .search {
+      max-width: 100%;
+      border: none;
+      outline: none;
+      padding-left: 1.6rem;
+    }
+
+    .searchIcon {
+      top: 20%;
+      left: 0.4rem;
+      position: absolute;
+    }
+  }
+}
+
+.folders {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  padding-left: 0.2rem;
+  overflow: hidden;
+  min-width: 5rem;
+
+  .folder {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 0.2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    .iconFolder {
+      width: 1rem;
+      height: fit-content;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  .folder:hover {
+    background: #d7f6fd;
+  }
+
+  .folder.active {
+    border-radius: 0.2rem;
+    background: #cfd7f7;
+  }
+
+  .folder.active:hover {
+    border: 1px solid #80c2d3;
+    background: #a5ddeb;
+  }
+}
+
+.resizeBar {
+  min-width: 0.2rem;
+  margin: 0 0.1rem;
+  background: rgba(13, 58, 117, 0.2);
+
+  &:hover {
+    cursor: col-resize;
+  }
+}
